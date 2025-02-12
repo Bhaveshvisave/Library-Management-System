@@ -1,0 +1,43 @@
+﻿@model LibraryManagementSystem.Models.BorrowRecord
+
+<h1>Add New Borrow Record</h1>
+<form asp-action="Create" method="post" class="form-group">
+    <div class="mb-3">
+        <label>Book</label>
+        <select asp-for="BookId" class="form-control" required>
+            <option value="">-- Select Book --</option>
+            @foreach (var book in ViewBag.Books)
+            {
+                <option value="@book.Id">@book.Title</option>
+            }
+        </select>
+        <span asp-validation-for="BookId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Member</label>
+        <select asp-for="MemberId" class="form-control" required>
+            <option value="">-- Select Member --</option>
+            @foreach (var member in ViewBag.Members)
+            {
+                <option value="@member.Id">@member.Name</option>
+            }
+        </select>
+        <span asp-validation-for="MemberId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Borrow Date</label>
+        <input asp-for="BorrowDate" type="date" class="form-control" required />
+        <span asp-validation-for="BorrowDate" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Return Date</label>
+        <input asp-for="ReturnDate" type="date" class="form-control" required />
+        <span asp-validation-for="ReturnDate" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+</form>

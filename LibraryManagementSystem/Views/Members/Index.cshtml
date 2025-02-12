@@ -1,0 +1,49 @@
+﻿@model List<LibraryManagementSystem.Models.Member>
+
+<h1>Members</h1>
+<a class="btn btn-primary" asp-action="Create">Add New Member</a>
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success m-2" id="SuccessMessage">
+        @TempData["SuccessMessage"]
+    </div>
+}
+<table class="table table-hover mt-3 mb-3 rounded-table text-center">
+    <thead class="table-dark">
+        <tr>
+            <th>Sr. No.</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var member in Model)
+            {
+                <tr>
+                    <td>@(Model.IndexOf(member) + 1)</td>
+                    <td>@member.Name</td>
+                    <td>@member.Email</td>
+                    <td>@member.Phone</td>
+                    <td>
+                        <a class="btn btn-info" asp-action="Edit" asp-route-id="@member.Id">Edit</a>
+                        @* <a class="btn btn-danger ms-3" asp-action="Delete" asp-route-id="@member.Id">Delete</a> *@
+                        <form asp-action="Delete" asp-controller="Members" method="post" onsubmit="return confirm('Are you sure?');" style="display:inline;">
+                            <input type="hidden" name="id" value="@member.Id" />
+                            <button type="submit" class="btn btn-danger ms-3">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" class="text-center">No Members Available</td>
+            </tr>
+        }
+    </tbody>
+</table>

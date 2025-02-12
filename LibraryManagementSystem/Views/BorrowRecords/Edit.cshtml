@@ -1,0 +1,51 @@
+﻿@model LibraryManagementSystem.Models.BorrowRecord
+
+<h2>Edit Borrow Record</h2>
+
+<form asp-action="Edit" asp-controller="BorrowRecords" method="post" class="form-group">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label class="form-label">Book</label>
+        <select asp-for="BookId" class="form-control" required>
+            <option value="">-- Select Book --</option>
+            @foreach (var book in ViewBag.Books)
+            {
+                <option value="@book.Id">@book.Title</option>
+            }
+        </select>
+        <span asp-validation-for="BookId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Member</label>
+        <select asp-for="MemberId" class="form-control" required>
+            <option value="">-- Select Member --</option>
+            @foreach (var member in ViewBag.Members)
+            {
+                <option value="@member.Id">@member.Name</option>
+            }
+        </select>
+        <span asp-validation-for="MemberId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Borrow Date</label>
+        <input asp-for="BorrowDate" type="date" class="form-control" required />
+        <span asp-validation-for="BorrowDate" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Return Date</label>
+        <input asp-for="ReturnDate" type="date" class="form-control" required />
+        <span asp-validation-for="ReturnDate" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save Changes</button>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+</form>
+
+<!-- ✅ Include Validation Scripts Directly -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>

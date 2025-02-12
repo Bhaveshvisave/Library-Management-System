@@ -1,0 +1,39 @@
+﻿@model LibraryManagementSystem.Models.Book
+
+<h2>Edit Book</h2>
+
+<form asp-action="Edit" asp-controller="Books" method="post" class="form-group">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input asp-for="Title" class="form-control" placeholder="Enter book title" required />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Author</label>
+        <input asp-for="Author" class="form-control" placeholder="Enter author's name" required />
+        <span asp-validation-for="Author" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">ISBN</label>
+        <input asp-for="ISBN" class="form-control" placeholder="Enter ISBN number" required pattern="\d{10,13}" title="ISBN must be 10-13 digits" />
+        <span asp-validation-for="ISBN" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Published Date</label>
+        <input asp-for="PublishedDate" type="date" class="form-control" required />
+        <span asp-validation-for="PublishedDate" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save Changes</button>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+</form>
+
+<!-- ✅ Include Validation Scripts Directly -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>

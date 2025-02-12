@@ -1,0 +1,87 @@
+﻿.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    margin-top: 20px;
+}
+
+footer {
+    bottom: 0 !important;
+    width: 100%;
+    margin-top: 20px;
+    background-color: #f8f9fa;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 1px solid #e9ecef;
+}
+
+/*.rounded-table {
+    border-radius: 8px;*/ /* Adjust this value to your preference */
+    /*overflow: hidden;*/ /* Ensures that the rounded corners are visible */
+/*}*/
+
+/* Rounded table for a modern look */
+.rounded-table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Light mode table */
+.table-light {
+    background-color: white;
+    color: black;
+}
+
+/* Dark mode table */
+.table-dark {
+    background-color: #343a40 !important;
+    color: white !important;
+}
+
+.table-dark th {
+    background-color: #23272b !important;
+    color: white !important;
+}
+
+/* Footer Dark Mode */
+#footer.bg-dark {
+    background-color: #23272b !important;
+    color: white !important;
+}
+
+input {
+    background-color: rgba(255, 255, 255, 0.416) !important;
+    background-blend-mode: overlay !important;
+    backdrop-filter: blur(5px) !important;
+    border-radius: 10px !important;
+    padding: 10px !important;
+    transition: background-color 0.3s ease-in-out !important;
+}
+
+    input:focus {
+        background-color: rgba(255, 255, 255, 0.562) !important;
+    }
+
+::placeholder {
+    color: rgba(0, 0, 0, 0.744) !important;
+}
+
+select {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    backdrop-filter: blur(5px) !important;
+    color: rgba(0, 0, 0, 0.744) !important;
+    border: none !important;
+    border-radius: 10px !important;
+    transition: background-color 0.3s ease-in-out !important;
+}

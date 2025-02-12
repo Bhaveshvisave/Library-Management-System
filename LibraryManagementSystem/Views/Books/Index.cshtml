@@ -1,0 +1,50 @@
+﻿@model List<LibraryManagementSystem.Models.Book>
+
+<h1>Books</h1>
+<a class="btn btn-primary" asp-action="Create">Add New Book</a>
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success m-2" id="SuccessMessage">
+        @TempData["SuccessMessage"]
+    </div>
+}
+<table class="table table-hover mt-3 mb-3 rounded-table table-light text-center">
+    <thead class="table-dark">
+        <tr>
+            <th>Sr. No.</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Published Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td>@(Model.IndexOf(book) + 1)</td>
+                    <td>@book.Title</td>
+                    <td>@book.Author</td>
+                    <td>@book.ISBN</td>
+                    <td>@book.PublishedDate.ToShortDateString()</td>
+                    <td>
+                        <a class="btn btn-info" asp-action="Edit" asp-route-id="@book.Id">Edit</a>
+                        <form asp-action="Delete" asp-controller="Books" method="post" onsubmit="return confirm('Are you sure?');" style="display:inline;">
+                            <input type="hidden" name="id" value="@book.Id" />
+                            <button type="submit" class="btn btn-danger ms-3">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="6" class="text-center">No Books Available</td>
+            </tr>
+        }
+    </tbody>
+</table>

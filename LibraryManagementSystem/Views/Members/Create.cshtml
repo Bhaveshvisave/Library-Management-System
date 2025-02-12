@@ -1,0 +1,32 @@
+﻿@model LibraryManagementSystem.Models.Member
+
+<h1>Add New Member</h1>
+<form asp-action="Create" method="post" class="form-group">
+    <div class="mb-3">
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" placeholder="Enter full name" required />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Email</label>
+        <input asp-for="Email" type="email" class="form-control" placeholder="Enter email address" required />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Phone</label>
+        <input asp-for="Phone" type="tel" class="form-control" id="phoneInput" placeholder="Enter 10-digit phone number" pattern="^\d{10}$" title="Phone number must be 10 digits" required maxlength="10" minlength="10"/>
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+</form>
+
+<!-- ✅ JavaScript to Restrict Input to Numbers Only -->
+<script>
+    document.getElementById("phoneInput").addEventListener("input", function (e) {
+        this.value = this.value.replace(/\D/g, ''); // Remove non-numeric characters
+    });
+</script>

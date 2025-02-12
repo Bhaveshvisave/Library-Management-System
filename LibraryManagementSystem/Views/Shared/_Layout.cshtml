@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management</title>
+    <link rel="icon" type="image/x-icon" href="~/library.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <!-- ✅ Include Validation Scripts Directly -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light" id="navbar">
+            <div class="container">
+                <a class="navbar-brand" href="/">Library Management</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Books" asp-action="Index">Books</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Members" asp-action="Index">Members</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="BorrowRecords" asp-action="Index">Borrow Records</a></li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#" onclick="darkmode()">
+                <img id="darkModeIcon" src="/moon.png" style="height: 25px; width: 25px; margin-right: 20px;" alt="darkmode">
+            </a>
+        </nav>
+    </header>
+
+
+    <main class="container content">
+        @RenderBody()
+    </main>
+
+    <footer id="footer" class="bg-light text-center p-2 mt-3 mb-0">
+        <p>© 2025 Library Management System | All rights reserved.</p>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js"></script>
+</body>
+</html>

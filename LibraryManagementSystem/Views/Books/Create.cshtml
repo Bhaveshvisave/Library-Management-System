@@ -1,0 +1,31 @@
+﻿@model LibraryManagementSystem.Models.Book
+
+<h1>Add New Book</h1>
+<form asp-action="Create" method="post" class="form-group">
+    <div class="mb-3">
+        <label>Title</label>
+        <input asp-for="Title" class="form-control" placeholder="Enter book title" required />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Author</label>
+        <input asp-for="Author" class="form-control" placeholder="Enter author's name" required />
+        <span asp-validation-for="Author" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>ISBN</label>
+        <input asp-for="ISBN" class="form-control" type="number" placeholder="Enter ISBN (10-13 digits)" pattern="\d{10,13}" title="ISBN must be 10-13 digits" required />
+        <span asp-validation-for="ISBN" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Published Date</label>
+        <input asp-for="PublishedDate" type="date" class="form-control" required />
+        <span asp-validation-for="PublishedDate" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+</form>

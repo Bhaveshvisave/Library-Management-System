@@ -1,0 +1,36 @@
+﻿@model LibraryManagementSystem.Models.Member
+
+<h2>Edit Member</h2>
+
+<form asp-action="Edit" asp-controller="Members" method="post" class="form-group">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input asp-for="Name" class="form-control" placeholder="Enter member name" required />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input asp-for="Email" type="email" class="form-control" placeholder="Enter email" required />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Phone</label>
+        <input asp-for="Phone" type="tel" class="form-control" id="phoneInput" placeholder="Enter phone number" pattern="^\d{10}$" title="Phone number must be 10 digits" required maxlength="10" minlength="10"/>
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save Changes</button>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+</form>
+
+
+
+<script>
+    document.getElementById("phoneInput").addEventListener("input", function (e) {
+        this.value = this.value.replace(/\D/g, ''); // Remove non-numeric characters
+    });
+</script>
