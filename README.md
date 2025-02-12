@@ -77,9 +77,9 @@ LibraryManagementSystem/
    git clone https://github.com/Bhaveshvisave/Library-Management-System.git
    ```
 
-3. Open the project: Navigate to the project directory and open the solution file(.sln) in Visual Studio.
+2. Open the project: Navigate to the project directory and open the solution file(.sln) in Visual Studio.
 
-4. Restore NuGet packages:
+3. Restore NuGet packages:
 
    Run the following command in Package Manager Console (PMC):
    
@@ -87,9 +87,9 @@ LibraryManagementSystem/
    Update-Package -reinstall
    ```
 
-6. Run the application: Press `F5` to build and run the application locally.
+4. Run the application: Press `F5` to build and run the application locally.
 
-7. Browse through the pages:
+5. Browse through the pages:
 
     - **Home**: View the home page with general information.
     - **Book Management**: Manage book details from the `Books` section.
