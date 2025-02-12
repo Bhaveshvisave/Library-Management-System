@@ -73,17 +73,23 @@ LibraryManagementSystem/
 
 1. Clone the repository:
 
-   ```git clone https://github.com/Bhaveshvisave/Library-Management-System.git```
+   ```bash
+   git clone https://github.com/Bhaveshvisave/Library-Management-System.git
+   ```
 
-2. Open the project: Navigate to the project directory and open the solution file(.sln) in Visual Studio.
+3. Open the project: Navigate to the project directory and open the solution file(.sln) in Visual Studio.
 
-3. Restore NuGet packages: Run the following command in Package Manager Console (PMC):
+4. Restore NuGet packages:
+
+   Run the following command in Package Manager Console (PMC):
    
-   ```Update-Package -reinstall```
+   ```bash
+   Update-Package -reinstall
+   ```
 
-5. Run the application: Press `F5` to build and run the application locally.
+6. Run the application: Press `F5` to build and run the application locally.
 
-6. Browse through the pages:
+7. Browse through the pages:
 
     - **Home**: View the home page with general information.
     - **Book Management**: Manage book details from the `Books` section.
@@ -106,17 +112,23 @@ Contributions are always welcome! If you'd like to add new features, fix bugs, o
 
 2. Create your feature branch:
 
-    ```git checkout -b feature/your-feature```
+    ```bash
+   git checkout -b feature/your-feature
+    ```
 
-3. Commit your changes:
+4. Commit your changes:
 
-    ```git commit -m 'Add your feature'```
+    ```bash
+   git commit -m 'Add your feature'
+    ```
 
-4. Push to the branch:
+6. Push to the branch:
 
-    ```git push origin feature/your-feature```
+    ```bash
+   git push origin feature/your-feature
+    ```
 
-5. Create a Pull Request (PR) on GitHub.
+8. Create a Pull Request (PR) on GitHub.
 
 ## License
 
