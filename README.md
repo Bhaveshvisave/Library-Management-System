@@ -39,8 +39,10 @@ LibraryManagementSystem/
 │   ├── BorrowRecords/
 │   │   └── Index.cshtml         # Borrow record management view
 │   │   └── Edit.cshtml          # Edit borrow record view
-│   └── Shared/
-│       └── _Layout.cshtml       # Layout page (includes site-wide header, footer, and styles)
+│   ├── Shared/
+│   │       └── _Layout.cshtml     # Layout page (includes site-wide header, footer, and styles)
+│   └── _ViewImports.cshtml        # View import settings
+│   └── _ViewStart.cshtml          # Default view settings
 │
 ├── wwwroot/
 │   ├── css/
