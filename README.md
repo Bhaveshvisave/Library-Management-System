@@ -17,28 +17,28 @@ The Library Management System is a web-based application designed to manage the 
 LibraryManagementSystem/
 │
 ├── Controllers/
-│   └── HomeController.cs        # Home page controller
-│   └── BooksController.cs       # Book management controller
-│   └── MembersController.cs     # Member management controller
+│   └── HomeController.cs          # Home page controller
+│   └── BooksController.cs         # Book management controller
+│   └── MembersController.cs       # Member management controller
 │   └── BorrowRecordsController.cs # Borrow record management controller
 │
 ├── Models/
-│   └── Book.cs                  # Book model class
-│   └── Member.cs                # Member model class
-│   └── BorrowRecord.cs          # Borrow record model class
+│   └── Book.cs                    # Book model class
+│   └── Member.cs                  # Member model class
+│   └── BorrowRecord.cs            # Borrow record model class
 │
 ├── Views/
 │   ├── Home/
-│   │   └── Index.cshtml         # Home page view
+│   │   └── Index.cshtml           # Home page view
 │   ├── Books/
-│   │   └── Index.cshtml         # Book management view
-│   │   └── Edit.cshtml          # Edit book view
+│   │   └── Index.cshtml           # Book management view
+│   │   └── Edit.cshtml            # Edit book view
 │   ├── Members/
-│   │   └── Index.cshtml         # Member management view
-│   │   └── Edit.cshtml          # Edit member view
+│   │   └── Index.cshtml           # Member management view
+│   │   └── Edit.cshtml            # Edit member view
 │   ├── BorrowRecords/
-│   │   └── Index.cshtml         # Borrow record management view
-│   │   └── Edit.cshtml          # Edit borrow record view
+│   │   └── Index.cshtml           # Borrow record management view
+│   │   └── Edit.cshtml            # Edit borrow record view
 │   ├── Shared/
 │   │       └── _Layout.cshtml     # Layout page (includes site-wide header, footer, and styles)
 │   └── _ViewImports.cshtml        # View import settings
@@ -46,13 +46,13 @@ LibraryManagementSystem/
 │
 ├── wwwroot/
 │   ├── css/
-│   │   └── site.css             # Custom CSS styles
+│   │   └── site.css               # Custom CSS styles
 │   ├── js/
-│   │   └── site.js              # Custom JavaScript functionality
+│   │   └── site.js                # Custom JavaScript functionality
 │   └── images/
-│       └── logo.png             # Logo for the system
+│       └── logo.png               # Logo for the system
 │
-└── README.md                    # Project README file
+└── README.md                      # Project README file
 </pre>
 
 ## Technologies Used
@@ -70,6 +70,14 @@ LibraryManagementSystem/
 - ASP.NET MVC
 - Entity Framework Core (Database First Approach)
 - Microsoft SQL Server (Database)
+
+
+### Prerequisites
+Before you begin, make sure you have the following installed:
+- **.NET Core SDK** (version 5 or higher).
+- **SQL Server** or **LocalDB** for the database.
+- A code editor like **Visual Studio** or **Visual Studio Code** (optional).
+
 
 ## How to Run the Project
 
